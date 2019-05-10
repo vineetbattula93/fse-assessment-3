@@ -5,8 +5,9 @@ import com.vineet.assessment3.repository.UserEventRepository;
 import com.vineet.assessment3.service.UserEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import
+
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class UserEventController {
     }
 
     @GetMapping(value = "/events/{userId}")
-    public List<UserEvent> getUserEvents(@PathVariables("userId") String userId){
+    public List<UserEvent> getUserEvents(@PathVariable("userId") String userId){
         return service.getEventsById(userId);
     }
 
